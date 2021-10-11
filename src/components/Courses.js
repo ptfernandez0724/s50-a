@@ -7,16 +7,20 @@ export default function Courses(){
              <Card className="courseCard p-1 mt-3">
                  <Card.Body>
                      <Card.Title><h4>Sample Course</h4></Card.Title>
-                     <Card.Text>
-                         <h6>Description:</h6>
-                            <p> 
-                            This is a sample courseCard
-                            </p>
-                         <h6>Price:</h6>
-                            <p>
+                     <Card.Subtitle>
+                        Description:
+                     </Card.Subtitle>
+                        <Card.Text>                             
+                                This is a sample courseCard                            
+                        </Card.Text>
+                     <Card.Subtitle>
+                        Price:
+                     </Card.Subtitle>
+                        <Card.Text>
                             Php 40,000.00
-                            </p>
-                     </Card.Text>
+                        </Card.Text>
+                            
+                     
                      <Button className="btn btn-primary">Enroll</Button>
                  </Card.Body>
              </Card>
