@@ -4,7 +4,7 @@ import { Navbar, Nav } from 'react-bootstrap';
 
 const AppNavbar = () => {
     return (
-        <Navbar bg="warning" expand="lg">
+        <Navbar bg="warning" expand="lg" className="mb-3">
             <Navbar.Brand href="#home">Zuitt Booking System</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
