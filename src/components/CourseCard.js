@@ -51,7 +51,7 @@ export default function CourseCard({courseProp}){
                             Enrollees: {count}
                         </Card.Text>
                         <Card.Text>
-                            Enrollees: {seat}
+                            Seats: {seat}
                         </Card.Text>
                      
                      <Button className="btn btn-primary" onClick={enroll}>Enroll</Button>
