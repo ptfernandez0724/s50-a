@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {Row, Col, Card, Button} from 'react-bootstrap';
 import PropTypes from 'prop-types';
 
@@ -14,12 +14,20 @@ export default function CourseCard({courseProp}){
     // getter is the stored initial state or default value
     // setter is the updated value from the getter
 
-    const [count, setCount] = useState(0)
-    const [seat, setSeat] = useState(10)
-    
+    const [count, setCount] = useState(0);
+    const [seat, setSeat] = useState(10);
+    // state hook that indicates availability of course for enrollment via color of button
+    const [isOpen, setIsOpen] = useState(true);
+
+    useEffect(() => {
+        if(seat === 0){
+            setIsOpen(false)
+        } 
+        
+    }, [seat])
 
     function enroll() {
-        if(seat == 0){
+        if(seat === 0){
             alert("No more available seats")
 
         } else {
@@ -53,8 +61,14 @@ export default function CourseCard({courseProp}){
                         <Card.Text>
                             Seats: {seat}
                         </Card.Text>
+                     {isOpen 
+                     ?
+                        <Button className="btn btn-primary" onClick={enroll}>Enroll</Button>
+                     :
+                        <Button className="btn btn-primary" disabled>Enroll</Button>
+                     }
                      
-                     <Button className="btn btn-primary" onClick={enroll}>Enroll</Button>
+                     
                  </Card.Body>
              </Card>
          </Col>
