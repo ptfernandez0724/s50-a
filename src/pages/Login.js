@@ -1,8 +1,12 @@
-import { Fragment, useState, useEffect } from "react";
+import { Fragment, useState, useEffect, useContext } from "react";
 import { Form, Button } from "react-bootstrap";
 import Swal from 'sweetalert2'
+// React context
+import UserContext from "../UserContext";
 
 export default function Login(){
+    // useContext is a react hook used to unwrap our context. it will return the data passed as values by a provider
+    const { user, setUser } = useContext(UserContext);
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [isActive, setIsActive] = useState(false);
@@ -22,6 +26,11 @@ export default function Login(){
         if(email !== '' && password !== ''){
             setEmail('');
             setPassword('');
+            // local storage allows us to save data within our browsers as strings
+            // the set item method of the Storage interface when passed a key name and value will add that ket to the given storage object or update the key's values if it already exists
+            // setItem('key', value)
+            localStorage.setItem('email', email);
+            setUser({ email: email });
 
             Swal.fire({
                 title: 'Ahoy!',
