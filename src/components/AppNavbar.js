@@ -10,8 +10,9 @@ const AppNavbar = () => {
 
     const { user } = useContext(UserContext)
 
-    let rightNav = (user.email !== null) ?
+    let rightNav = (user.accessToken !== null) 
         
+        ?       
         <Fragment>
             <Nav.Link as={NavLink} to="/logout">Logout</Nav.Link>
         </Fragment>
