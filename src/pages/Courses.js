@@ -34,7 +34,7 @@ export default function Courses(){
             {
                 (user.isAdmin === true )
                 ?
-                <AdminView coursesData={allCourses}/>
+                <AdminView coursesData={allCourses} fetchData={fetchData}/>
                 :
                 <UserView coursesData={allCourses}/>
             }
